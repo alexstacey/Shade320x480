@@ -40,13 +40,84 @@
                             <Group><Variable name="group"/></Group>
                             <TrackColorAlpha>200</TrackColorAlpha>
                             <Children>
-                              <CoverArt>
+                              <!-- <CoverArt>
                                 <Pos>0,0</Pos>
                                 <TooltipId>coverart</TooltipId>
                                 <ObjectName>DeckCoverArt</ObjectName>
                                 <Size>35f,35f</Size>
                                 <Group><Variable name="group"/></Group>
-                              </CoverArt>
+                              </CoverArt> -->
+
+                              <!--
+              ****************************************
+              Button- Play
+              ****************************************
+              -->
+              <!-- Play deck 1 -->
+              <!-- Play indicator, blinks depending on Cue mode -->
+              <PushButton>
+                <Pos>0,0</Pos>
+                <NumberStates>2</NumberStates>
+                <State>
+                  <Number>0</Number>
+                  <Pressed>skin:/btn/btn_play_deck.png</Pressed>
+                  <Unpressed>skin:/btn/btn_play_deck.png</Unpressed>
+                </State>
+                <State>
+                  <Number>1</Number>
+                  <Pressed>skin:/btn/btn_play_deck_over.png</Pressed>
+                  <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
+                </State>
+                <Connection>
+                  <ConfigKey>[Channel<Variable name="channum"/>],play_indicator</ConfigKey>
+                </Connection>
+              </PushButton>
+              <!-- Preview indicator -->
+              <PushButton>
+                <Pos>0,0</Pos>
+                <NumberStates>2</NumberStates>
+                <State>
+                  <Number>0</Number>
+                </State>
+                <State>
+                  <Number>1</Number>
+                  <Pressed>skin:/btn/btn_play_deck_preview.png</Pressed>
+                  <Unpressed>skin:/btn/btn_play_deck_preview.png</Unpressed>
+                </State>
+                <Connection>
+                  <ConfigKey>[Channel1],play</ConfigKey>
+                </Connection>
+              </PushButton>
+              <!-- Play -->
+              <PushButton>
+                <TooltipId>play_cue_set</TooltipId>
+                <Pos>0,0</Pos>
+                <NumberStates>2</NumberStates>
+                <State>
+                  <Number>0</Number>
+                  <Pressed>skin:/btn/btn_play_deck_down.png</Pressed>
+                  <Unpressed></Unpressed>
+                </State>
+                <State>
+                  <Number>1</Number>
+                  <Pressed>skin:/btn/btn_play_deck_overdown.png</Pressed>
+                  <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
+                </State>
+                <Connection>
+                  <ConfigKey>[Channel<Variable name="channum"/>],play</ConfigKey>
+                  <ButtonState>LeftButton</ButtonState>
+                </Connection>
+                <Connection>
+                  <ConfigKey>[Channel<Variable name="channum"/>],cue_set</ConfigKey>
+                  <ButtonState>RightButton</ButtonState>
+                </Connection>
+                <Connection>
+                  <ConfigKey>[Channel<Variable name="channum"/>],play_latched</ConfigKey>
+                  <ConnectValueFromWidget>false</ConnectValueFromWidget>
+                </Connection>
+              </PushButton>
+              <!-- end hacked in from mixer -->
+
                             </Children>
                           </TrackWidgetGroup>
                         </Children>
@@ -65,7 +136,7 @@
                               <TrackProperty>
                                 <TooltipId>track_title</TooltipId>
                                 <Style>QLabel {
-                                  font-size: 13px;
+                                  font-size: 10px;
                                   line-height: 13px;
                                   font-weight: bold;
                                   color: #191F24;
@@ -88,8 +159,9 @@
                                   <Unpressed>skin:/btn/btn_eject.png</Unpressed>
                                 </State>
                                 <Connection>
-                                  <ConfigKey><Variable name="group"/>,eject</ConfigKey>
-                                  <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
+                                  <!-- <ConfigKey><Variable name="group"/>,eject</ConfigKey> -->
+                                  <ConfigKey>[Master],maximize_library</ConfigKey>
+                                  <EmitOnPressAndRelease>false</EmitOnPressAndRelease>
                                   <ButtonState>LeftButton</ButtonState>
                                   <ConnectValueToWidget>false</ConnectValueToWidget>
                                 </Connection>
@@ -111,7 +183,7 @@
                               <TrackProperty>
                                 <TooltipId>track_artist</TooltipId>
                                 <Style>QLabel {
-                                  font-size: 13px;
+                                  font-size: 10px;
                                   line-height: 13px;
                                   font-weight: bold;
                                   background-color: transparent;
@@ -128,7 +200,7 @@
                               <NumberPos>
                                 <TooltipId>track_time</TooltipId>
                                 <Style>QLabel {
-                                  font-size: 13px;
+                                  font-size: 10px;
                                   font-weight: bold;
                                   background-color: transparent;
                                   color: #191F24;
@@ -238,14 +310,14 @@
                           </SingletonContainer>
                         </Children>
                       </WidgetGroup>
-                      
+
                       <WidgetGroup>
                         <ObjectName>DeckLowerLeftPart</ObjectName>
-                        <Size>40f,20f</Size>
+                        <!-- <Size>40f,20f</Size> -->
                         <!-- <BackPath>style/style_bg_deck_woverview_buttons.png</BackPath> -->
                         <Children>
 
-<!--
+              <!--
               ****************************************
               Button- Play
               ****************************************
