@@ -16,7 +16,7 @@
                 <TooltipId>master_gain</TooltipId>
                 <NumberStates>64</NumberStates>
                 <Path>knobs/knob_rotary_s%1.png</Path>
-                <Pos>2,2</Pos>
+                <Pos>2,5</Pos>
                 <Connection>
                   <ConfigKey>[Master],volume</ConfigKey>
                 </Connection>

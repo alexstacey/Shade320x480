@@ -34,8 +34,10 @@
                         <Size>40f,45f</Size>
                         <BackPath>style/style_bg_deck_top_left.png</BackPath>
                         <Children>
+
+                          <!-- deck play button -->
                           <TrackWidgetGroup>
-                            <Pos>2,7</Pos>
+                            <Pos>1,5</Pos>
                             <Size>35f,35f</Size>
                             <Group><Variable name="group"/></Group>
                             <TrackColorAlpha>200</TrackColorAlpha>
@@ -49,79 +51,100 @@
                               </CoverArt> -->
 
                               <!--
-              ****************************************
-              Button- Play
-              ****************************************
-              -->
-              <!-- Play deck 1 -->
-              <!-- Play indicator, blinks depending on Cue mode -->
-              <PushButton>
-                <Pos>0,0</Pos>
-                <NumberStates>2</NumberStates>
-                <State>
-                  <Number>0</Number>
-                  <Pressed>skin:/btn/btn_play_deck.png</Pressed>
-                  <Unpressed>skin:/btn/btn_play_deck.png</Unpressed>
-                </State>
-                <State>
-                  <Number>1</Number>
-                  <Pressed>skin:/btn/btn_play_deck_over.png</Pressed>
-                  <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
-                </State>
-                <Connection>
-                  <ConfigKey>[Channel<Variable name="channum"/>],play_indicator</ConfigKey>
-                </Connection>
-              </PushButton>
-              <!-- Preview indicator -->
-              <PushButton>
-                <Pos>0,0</Pos>
-                <NumberStates>2</NumberStates>
-                <State>
-                  <Number>0</Number>
-                </State>
-                <State>
-                  <Number>1</Number>
-                  <Pressed>skin:/btn/btn_play_deck_preview.png</Pressed>
-                  <Unpressed>skin:/btn/btn_play_deck_preview.png</Unpressed>
-                </State>
-                <Connection>
-                  <ConfigKey>[Channel1],play</ConfigKey>
-                </Connection>
-              </PushButton>
-              <!-- Play -->
-              <PushButton>
-                <TooltipId>play_cue_set</TooltipId>
-                <Pos>0,0</Pos>
-                <NumberStates>2</NumberStates>
-                <State>
-                  <Number>0</Number>
-                  <Pressed>skin:/btn/btn_play_deck_down.png</Pressed>
-                  <Unpressed></Unpressed>
-                </State>
-                <State>
-                  <Number>1</Number>
-                  <Pressed>skin:/btn/btn_play_deck_overdown.png</Pressed>
-                  <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
-                </State>
-                <Connection>
-                  <ConfigKey>[Channel<Variable name="channum"/>],play</ConfigKey>
-                  <ButtonState>LeftButton</ButtonState>
-                </Connection>
-                <Connection>
-                  <ConfigKey>[Channel<Variable name="channum"/>],cue_set</ConfigKey>
-                  <ButtonState>RightButton</ButtonState>
-                </Connection>
-                <Connection>
-                  <ConfigKey>[Channel<Variable name="channum"/>],play_latched</ConfigKey>
-                  <ConnectValueFromWidget>false</ConnectValueFromWidget>
-                </Connection>
-              </PushButton>
-              <!-- end hacked in from mixer -->
+                              ****************************************
+                              Button- Play
+                              ****************************************
+                              -->
+                              <!-- Play deck 1 -->
+                              <!-- Play indicator, blinks depending on Cue mode -->
+                              <PushButton>
+                                <Pos>0,0</Pos>
+                                <NumberStates>2</NumberStates>
+                                <State>
+                                  <Number>0</Number>
+                                  <Pressed>skin:/btn/btn_play_deck.png</Pressed>
+                                  <Unpressed>skin:/btn/btn_play_deck.png</Unpressed>
+                                </State>
+                                <State>
+                                  <Number>1</Number>
+                                  <Pressed>skin:/btn/btn_play_deck_over.png</Pressed>
+                                  <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
+                                </State>
+                                <Connection>
+                                  <ConfigKey>[Channel<Variable name="channum"/>],play_indicator</ConfigKey>
+                                </Connection>
+                              </PushButton>
+                              <!-- Preview indicator -->
+                              <PushButton>
+                                <Pos>0,0</Pos>
+                                <NumberStates>2</NumberStates>
+                                <State>
+                                  <Number>0</Number>
+                                </State>
+                                <State>
+                                  <Number>1</Number>
+                                  <Pressed>skin:/btn/btn_play_deck_preview.png</Pressed>
+                                  <Unpressed>skin:/btn/btn_play_deck_preview.png</Unpressed>
+                                </State>
+                                <Connection>
+                                  <ConfigKey>[Channel1],play</ConfigKey>
+                                </Connection>
+                              </PushButton>
+                              <!-- Play -->
+                              <PushButton>
+                                <TooltipId>play_cue_set</TooltipId>
+                                <Pos>0,0</Pos>
+                                <NumberStates>2</NumberStates>
+                                <State>
+                                  <Number>0</Number>
+                                  <Pressed>skin:/btn/btn_play_deck_down.png</Pressed>
+                                  <Unpressed></Unpressed>
+                                </State>
+                                <State>
+                                  <Number>1</Number>
+                                  <Pressed>skin:/btn/btn_play_deck_overdown.png</Pressed>
+                                  <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
+                                </State>
+                                <Connection>
+                                  <ConfigKey>[Channel<Variable name="channum"/>],play</ConfigKey>
+                                  <ButtonState>LeftButton</ButtonState>
+                                </Connection>
+                                <Connection>
+                                  <ConfigKey>[Channel<Variable name="channum"/>],cue_set</ConfigKey>
+                                  <ButtonState>RightButton</ButtonState>
+                                </Connection>
+                                <Connection>
+                                  <ConfigKey>[Channel<Variable name="channum"/>],play_latched</ConfigKey>
+                                  <ConnectValueFromWidget>false</ConnectValueFromWidget>
+                                </Connection>
+                              </PushButton>
+                              <!-- end hacked in from mixer -->
+
+                              <NumberBpm>
+                                <Style>QLabel {
+                                    font-size: 10px;
+                                    font-weight: bold;
+                                    background-color: transparent;
+                                    color: #191F24;
+                                    padding-bottom: -2px;
+                                  }
+                                </Style>
+                                <TooltipId>visual_bpm</TooltipId>
+                                <Channel><Variable name="channum"/></Channel>
+                                <Alignment>center</Alignment>
+                                <Pos>0,20</Pos>
+                                <Size>35f,16f</Size>
+                                <Connection>
+                                  <ConfigKey><Variable name="group"/>,visual_bpm</ConfigKey>
+                                </Connection>
+                              </NumberBpm>
 
                             </Children>
                           </TrackWidgetGroup>
                         </Children>
                       </WidgetGroup>
+
+
                       <WidgetGroup>
                         <ObjectName>DeckTopMidPart</ObjectName>
                         <Size>i,45f</Size>
@@ -278,6 +301,7 @@
                         <BackPath>style/style_bg_deck_woverview.png</BackPath>
                         <Children>
                           <SingletonContainer>
+                            <!-- <Size>100e,19f</Size> -->
                             <ObjectName>Overview<Variable name="channum"/></ObjectName>
                           </SingletonContainer>
                         </Children>
@@ -288,81 +312,7 @@
                         <!-- <Size>40f,20f</Size> -->
                         <!-- <BackPath>style/style_bg_deck_woverview_buttons.png</BackPath> -->
                         <Children>
-
-              <!--
-              ****************************************
-              Button- Play
-              ****************************************
-              -->
-              <!-- Play deck 1 -->
-              <!-- Play indicator, blinks depending on Cue mode -->
-              <PushButton>
-                <Pos>0,0</Pos>
-                <NumberStates>2</NumberStates>
-                <State>
-                  <Number>0</Number>
-                  <Pressed>skin:/btn/btn_play_deck.png</Pressed>
-                  <Unpressed>skin:/btn/btn_play_deck.png</Unpressed>
-                </State>
-                <State>
-                  <Number>1</Number>
-                  <Pressed>skin:/btn/btn_play_deck_over.png</Pressed>
-                  <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
-                </State>
-                <Connection>
-                  <ConfigKey>[Channel<Variable name="channum"/>],play_indicator</ConfigKey>
-                </Connection>
-              </PushButton>
-              <!-- Preview indicator -->
-              <PushButton>
-                <Pos>0,0</Pos>
-                <NumberStates>2</NumberStates>
-                <State>
-                  <Number>0</Number>
-                </State>
-                <State>
-                  <Number>1</Number>
-                  <Pressed>skin:/btn/btn_play_deck_preview.png</Pressed>
-                  <Unpressed>skin:/btn/btn_play_deck_preview.png</Unpressed>
-                </State>
-                <Connection>
-                  <ConfigKey>[Channel1],play</ConfigKey>
-                </Connection>
-              </PushButton>
-              <!-- Play -->
-              <PushButton>
-                <TooltipId>play_cue_set</TooltipId>
-                <Pos>0,0</Pos>
-                <NumberStates>2</NumberStates>
-                <State>
-                  <Number>0</Number>
-                  <Pressed>skin:/btn/btn_play_deck_down.png</Pressed>
-                  <Unpressed></Unpressed>
-                </State>
-                <State>
-                  <Number>1</Number>
-                  <Pressed>skin:/btn/btn_play_deck_overdown.png</Pressed>
-                  <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
-                </State>
-                <Connection>
-                  <ConfigKey>[Channel<Variable name="channum"/>],play</ConfigKey>
-                  <ButtonState>LeftButton</ButtonState>
-                </Connection>
-                <Connection>
-                  <ConfigKey>[Channel<Variable name="channum"/>],cue_set</ConfigKey>
-                  <ButtonState>RightButton</ButtonState>
-                </Connection>
-                <Connection>
-                  <ConfigKey>[Channel<Variable name="channum"/>],play_latched</ConfigKey>
-                  <ConnectValueFromWidget>false</ConnectValueFromWidget>
-                </Connection>
-              </PushButton>
-              <!-- end hacked in from mixer -->
-
-
-
-<!-- 
-
+                          <!-- 
                           <PushButton>
                             <TooltipId>repeat</TooltipId>
                             <NumberStates>2</NumberStates>
@@ -469,61 +419,12 @@
               </WidgetGroup><!-- Cover/Artist/title/time / waveform/spinny / overview/controls -->
               
               
-              
-              <WidgetGroup><!-- Speed/key controls -->
+              <!-- Pitch Control and BPM display -->
+              <!-- <WidgetGroup>
                 <ObjectName>DeckRightPart</ObjectName>
                 <Size>50f,165f</Size>
                 <BackPath>style/style_bg_deck_right.png</BackPath>
                 <Children>
-                  <!-- <PushButton>
-                    <TooltipId>sync_enabled</TooltipId>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Pressed>skin:/btn/btn_sync_bpm_down.png</Pressed>
-                      <Unpressed>skin:/btn/btn_sync_bpm.png</Unpressed>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Pressed>skin:/btn/btn_sync_bpm_overdown.png</Pressed>
-                      <Unpressed>skin:/btn/btn_sync_bpm_over.png</Unpressed>
-                    </State>
-                    <Pos>3,15</Pos>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,sync_enabled</ConfigKey>
-                      <ButtonState>LeftButton</ButtonState>
-                    </Connection>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,beatsync_tempo</ConfigKey>
-                      <ButtonState>RightButton</ButtonState>
-                    </Connection>
-                  </PushButton> -->
-
-                  <!-- <PushButton>
-                    <TooltipId>sync_reset_key</TooltipId>
-                    <NumberStates>2</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Pressed>skin:/btn/btn_sync_key_down.png</Pressed>
-                      <Unpressed>skin:/btn/btn_sync_key.png</Unpressed>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Pressed>skin:/btn/btn_sync_key_overdown.png</Pressed>
-                      <Unpressed>skin:/btn/btn_sync_key_over.png</Unpressed>
-                    </State>
-                    <Pos>27,15</Pos>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,sync_key</ConfigKey>
-                      <ButtonState>LeftButton</ButtonState>
-                    </Connection>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,reset_key</ConfigKey>
-                      <ButtonState>RightButton</ButtonState>
-                    </Connection>
-                  </PushButton> -->
-
-
                   <WidgetGroup>
                     <Pos>3,10</Pos>
                     <Size>47f,26f</Size>
@@ -540,128 +441,21 @@
                       <NumberBpm>
                         <TooltipId>visual_bpm</TooltipId>
                         <Channel><Variable name="channum"/></Channel>
-                        <!--CSS alignments not respected see bug lp:605530 , lets call <Alignment>-->
                         <Alignment>center</Alignment>
                         <Connection>
                           <ConfigKey><Variable name="group"/>,visual_bpm</ConfigKey>
                         </Connection>
                       </NumberBpm>
-                      <!-- <Key>
-                        <TooltipId>visual_key</TooltipId>
-                        <Channel><Variable name="channum"/></Channel>
-                        <Alignment>center</Alignment>
-                        <Connection>
-                          <ConfigKey><Variable name="group"/>,visual_key</ConfigKey>
-                        </Connection>
-                      </Key> -->
 
                     </Children>
                   </WidgetGroup>
-                  <!-- <SliderComposed>
-                    <Handle>knob_visual_key.png</Handle>
-                    <Slider>slider_visual_key.png</Slider>
-                    <Pos>18,55</Pos>
-                    <Horizontal>true</Horizontal>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,visual_key_distance</ConfigKey>
-                      <EmitOnDownPress>false</EmitOnDownPress>
-                    </Connection>
-                  </SliderComposed> -->
-
-                  <!-- <PushButton>
-                    <TooltipId>pitch_down</TooltipId>
-                    <Size>10f,10f</Size>
-                    <NumberStates>1</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>◄</Text>
-                    </State>
-                    <Pos>5,52</Pos>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,pitch_down</ConfigKey>
-                      <ButtonState>LeftButton</ButtonState>
-                    </Connection>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,pitch_down_small</ConfigKey>
-                      <ButtonState>RightButton</ButtonState>
-                    </Connection>
-                  </PushButton>
-
-                  <PushButton>
-                    <TooltipId>pitch_up</TooltipId>
-                    <Size>10f,10f</Size>
-                    <NumberStates>1</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>►</Text>
-                    </State>
-                    <Pos>38,52</Pos>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,pitch_up</ConfigKey>
-                      <ButtonState>LeftButton</ButtonState>
-                    </Connection>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,pitch_up_small</ConfigKey>
-                      <ButtonState>RightButton</ButtonState>
-                    </Connection>
-                  </PushButton> -->
-
-                  <!-- <SliderComposed>
-                    <TooltipId>pitch</TooltipId>
-                    <Handle>knob_visual_key.png</Handle>
-                    <Slider>slider_visual_key.png</Slider>
-                    <Pos>18,58</Pos>
-                    <Horizontal>true</Horizontal>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,pitch</ConfigKey>
-                      <EmitOnDownPress>false</EmitOnDownPress>
-                    </Connection>
-                  </SliderComposed> -->
-
-                  <!-- Pitch range indicators -->
-                  <!-- <RateRange>
-                    <TooltipId>rate_range_display</TooltipId>
-                    <ObjectName>RateDisplayTopPrefix</ObjectName>
-                    <Channel><Variable name="channum" /></Channel>
-                    <Position>Top</Position>
-                    <Display>prefix</Display>
-                    <Size>20f,-1me</Size>
-                    <Pos>0,62</Pos>
-                  </RateRange>
-                  <RateRange>
-                    <TooltipId>rate_range_display</TooltipId>
-                    <ObjectName>RateDisplayTopRate</ObjectName>
-                    <Channel><Variable name="channum" /></Channel>
-                    <Position>Top</Position>
-                    <Display>range</Display>
-                    <Size>20f,-1me</Size>
-                    <Pos>32,62</Pos>
-                  </RateRange>
-                  <RateRange>
-                    <TooltipId>rate_range_display</TooltipId>
-                    <ObjectName>RateDisplayBottomPrefix</ObjectName>
-                    <Channel><Variable name="channum" /></Channel>
-                    <Position>Bottom</Position>
-                    <Align>Bottom</Align>
-                    <Display>prefix</Display>
-                    <Size>20f,-1me</Size>
-                    <Pos>0,148</Pos>
-                  </RateRange>
-                  <RateRange>
-                    <TooltipId>rate_range_display</TooltipId>
-                    <ObjectName>RateDisplayBottomRate</ObjectName>
-                    <Channel><Variable name="channum" /></Channel>
-                    <Align>Bottom</Align>
-                    <Display>range</Display>
-                    <Size>20f,-1me</Size>
-                    <Pos>32,148</Pos>
-                  </RateRange> -->
 
                   <SliderComposed>
                     <TooltipId>rate</TooltipId>
                     <Handle>knob_pitch.png</Handle>
                     <Slider>slider_pitch.png</Slider>
                     <Pos>20,32</Pos>
+                    <Size>0e,40f</Size>
                     <Horizontal>false</Horizontal>
                     <Connection>
                       <ConfigKey><Variable name="group"/>,rate</ConfigKey>
@@ -669,49 +463,10 @@
                     </Connection>
                   </SliderComposed>
 
-                  <!-- <PushButton>
-                    <TooltipId>rate_temp_up_rate_temp_up_small</TooltipId>
-                    <Size>10f,10f</Size>
-                    <NumberStates>1</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>►</Text>
-                    </State>
-                    <Pos>36,138</Pos>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,rate_temp_up</ConfigKey>
-                      <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
-                      <ButtonState>LeftButton</ButtonState>
-                    </Connection>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,rate_temp_up_small</ConfigKey>
-                      <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
-                      <ButtonState>RightButton</ButtonState>
-                    </Connection>
-                  </PushButton>
-
-                  <PushButton>
-                    <TooltipId>rate_temp_down_rate_temp_down_small</TooltipId>
-                    <Size>10f,10f</Size>
-                    <NumberStates>1</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Text>◄</Text>
-                    </State>
-                    <Pos>7,138</Pos>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,rate_temp_down</ConfigKey>
-                      <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
-                      <ButtonState>LeftButton</ButtonState>
-                    </Connection>
-                    <Connection>
-                      <ConfigKey><Variable name="group"/>,rate_temp_down_small</ConfigKey>
-                      <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
-                      <ButtonState>RightButton</ButtonState>
-                    </Connection>
-                  </PushButton> -->
                 </Children>
-              </WidgetGroup><!-- Speed/key controls -->
+              </WidgetGroup> -->
+            
+
             </Children>
           </WidgetGroup>
 
