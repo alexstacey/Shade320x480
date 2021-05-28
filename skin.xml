@@ -219,7 +219,7 @@
   <Style src="skin:style.qss"
          src-linux="skin:../default-menu-styles-linux.qss"
          src-windows="skin:../default-menu-styles-windows.qss"/>
-  <Size>480e,320e</Size>
+  <Size>480e,290e</Size>
   <Layout>vertical</Layout>
     <LaunchImageStyle>
       LaunchImage { background-color: #202020; }

@@ -11,17 +11,17 @@
       </WidgetGroup>
       <WidgetGroup>
         <ObjectName>DeckLeft</ObjectName>
-        <Size>0e,100min</Size>
+        <Size>0e,80min</Size>
         <Layout>vertical</Layout>
         <Children>
           <WidgetGroup><!-- Cover/Artist/title/time / waveform/spinny / overview/controls -->
             <ObjectName>DeckLeft</ObjectName>
-            <Size>0e,165f</Size>
+            <Size>0e,145f</Size>
             <Layout>horizontal</Layout>
             <Children>
               <WidgetGroup><!-- Cover/Artist/title/time / waveform/spinny / overview/controls -->
                 <ObjectName>DeckLeft</ObjectName>
-                <Size>0e,165f</Size>
+                <Size>0e,145f</Size>
                 <Layout>vertical</Layout>
                 <Children>
                   <WidgetGroup><!-- Cover art / Artist/title / Playposition -->
@@ -217,21 +217,23 @@
                       </WidgetGroup>
                     </Children>
                   </WidgetGroup><!-- Cover art / Artist/title / Playposition -->
+
+
                   <WidgetGroup><!-- Scrolling waveform / Spinny / Vinyl controls -->
                     <ObjectName>DeckUpperLeftMidPart</ObjectName>
-                    <Size>0e,81f</Size>
+                    <Size>0e,61f</Size>
                     <Layout>horizontal</Layout>
                     <Children>
                       <WidgetGroup>
                         <ObjectName>DeckUpperMidPart</ObjectName>
-                        <Size>0e,81f</Size>
+                        <Size>0e,61f</Size>
                         <BackPath>style/style_bg_deck_pane.png</BackPath>
                         <Layout>horizontal</Layout>
                         <Children>
                           <!-- Collapsing Waveform, VinylControl & spinning Vinyl widget-->
                           <WidgetGroup>
                             <ObjectName>DeckWaveformVinylControlSpinny</ObjectName>
-                            <Size>0e,81f</Size>
+                            <Size>0e,61f</Size>
                             <Layout>horizontal</Layout>
                             <Children>
                               <!--If you want the waveforms center to adjust when resizing in a collapsing widget
@@ -250,7 +252,7 @@
                               -->
                               <WidgetGroup>
                                 <Layout>horizontal</Layout>
-                                <Size>0e,81f</Size>
+                                <Size>0e,61f</Size>
                                 <Children>
                                   <Template src="skin:waveform.xml"/>
                                 </Children>
@@ -262,7 +264,9 @@
                       </WidgetGroup>
                     </Children>
                   </WidgetGroup><!-- Scrolling waveform / Spinny / Vinyl controls -->
-                  <WidgetGroup><!-- Overview waveform / Deck controls -->
+
+                  <!-- Overview waveform / Deck controls -->
+                  <WidgetGroup>
                     <ObjectName>DeckLowerLeftMidPart</ObjectName>
                     <Size>0e,39f</Size>
                     <Layout>horizontal</Layout>
@@ -357,26 +361,6 @@
 
 
 
-                          <!-- <PushButton>
-                            <TooltipId>show_spinny</TooltipId>
-                            <NumberStates>2</NumberStates>
-                            <State>
-                              <Number>0</Number>
-                              <Pressed>skin:/btn/btn_spinny.png</Pressed>
-                              <Unpressed>skin:/btn/btn_spinny.png</Unpressed>
-                            </State>
-                            <State>
-                              <Number>1</Number>
-                              <Pressed>skin:/btn/btn_spinny_over.png</Pressed>
-                              <Unpressed>skin:/btn/btn_spinny_over.png</Unpressed>
-                            </State>
-                            <Pos>1,1</Pos>
-                            <Connection>
-                              <ConfigKey>[Spinny<Variable name="channum"/>],show_spinny</ConfigKey>
-                              <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
-                              <ButtonState>LeftButton</ButtonState>
-                            </Connection>
-                          </PushButton> -->
 <!-- 
 
                           <PushButton>
@@ -483,12 +467,15 @@
                   </WidgetGroup><!-- Overview waveform / Deck controls -->
                 </Children>
               </WidgetGroup><!-- Cover/Artist/title/time / waveform/spinny / overview/controls -->
+              
+              
+              
               <WidgetGroup><!-- Speed/key controls -->
                 <ObjectName>DeckRightPart</ObjectName>
-                <Size>52f,165f</Size>
+                <Size>50f,165f</Size>
                 <BackPath>style/style_bg_deck_right.png</BackPath>
                 <Children>
-                  <PushButton>
+                  <!-- <PushButton>
                     <TooltipId>sync_enabled</TooltipId>
                     <NumberStates>2</NumberStates>
                     <State>
@@ -510,9 +497,9 @@
                       <ConfigKey><Variable name="group"/>,beatsync_tempo</ConfigKey>
                       <ButtonState>RightButton</ButtonState>
                     </Connection>
-                  </PushButton>
+                  </PushButton> -->
 
-                  <PushButton>
+                  <!-- <PushButton>
                     <TooltipId>sync_reset_key</TooltipId>
                     <NumberStates>2</NumberStates>
                     <State>
@@ -534,11 +521,11 @@
                       <ConfigKey><Variable name="group"/>,reset_key</ConfigKey>
                       <ButtonState>RightButton</ButtonState>
                     </Connection>
-                  </PushButton>
+                  </PushButton> -->
 
 
                   <WidgetGroup>
-                    <Pos>3,30</Pos>
+                    <Pos>3,10</Pos>
                     <Size>47f,26f</Size>
                     <Style>QLabel {
                         font-size: 12px;
@@ -559,19 +546,18 @@
                           <ConfigKey><Variable name="group"/>,visual_bpm</ConfigKey>
                         </Connection>
                       </NumberBpm>
-                      <Key>
+                      <!-- <Key>
                         <TooltipId>visual_key</TooltipId>
                         <Channel><Variable name="channum"/></Channel>
-                        <!--CSS alignments not respected see bug lp:605530 , lets call <Alignment>-->
                         <Alignment>center</Alignment>
                         <Connection>
                           <ConfigKey><Variable name="group"/>,visual_key</ConfigKey>
                         </Connection>
-                      </Key>
+                      </Key> -->
 
                     </Children>
                   </WidgetGroup>
-                  <SliderComposed>
+                  <!-- <SliderComposed>
                     <Handle>knob_visual_key.png</Handle>
                     <Slider>slider_visual_key.png</Slider>
                     <Pos>18,55</Pos>
@@ -580,9 +566,9 @@
                       <ConfigKey><Variable name="group"/>,visual_key_distance</ConfigKey>
                       <EmitOnDownPress>false</EmitOnDownPress>
                     </Connection>
-                  </SliderComposed>
+                  </SliderComposed> -->
 
-                  <PushButton>
+                  <!-- <PushButton>
                     <TooltipId>pitch_down</TooltipId>
                     <Size>10f,10f</Size>
                     <NumberStates>1</NumberStates>
@@ -618,9 +604,9 @@
                       <ConfigKey><Variable name="group"/>,pitch_up_small</ConfigKey>
                       <ButtonState>RightButton</ButtonState>
                     </Connection>
-                  </PushButton>
+                  </PushButton> -->
 
-                  <SliderComposed>
+                  <!-- <SliderComposed>
                     <TooltipId>pitch</TooltipId>
                     <Handle>knob_visual_key.png</Handle>
                     <Slider>slider_visual_key.png</Slider>
@@ -630,10 +616,10 @@
                       <ConfigKey><Variable name="group"/>,pitch</ConfigKey>
                       <EmitOnDownPress>false</EmitOnDownPress>
                     </Connection>
-                  </SliderComposed>
+                  </SliderComposed> -->
 
                   <!-- Pitch range indicators -->
-                  <RateRange>
+                  <!-- <RateRange>
                     <TooltipId>rate_range_display</TooltipId>
                     <ObjectName>RateDisplayTopPrefix</ObjectName>
                     <Channel><Variable name="channum" /></Channel>
@@ -669,13 +655,13 @@
                     <Display>range</Display>
                     <Size>20f,-1me</Size>
                     <Pos>32,148</Pos>
-                  </RateRange>
+                  </RateRange> -->
 
                   <SliderComposed>
                     <TooltipId>rate</TooltipId>
                     <Handle>knob_pitch.png</Handle>
                     <Slider>slider_pitch.png</Slider>
-                    <Pos>20,62</Pos>
+                    <Pos>20,32</Pos>
                     <Horizontal>false</Horizontal>
                     <Connection>
                       <ConfigKey><Variable name="group"/>,rate</ConfigKey>
@@ -683,7 +669,7 @@
                     </Connection>
                   </SliderComposed>
 
-                  <PushButton>
+                  <!-- <PushButton>
                     <TooltipId>rate_temp_up_rate_temp_up_small</TooltipId>
                     <Size>10f,10f</Size>
                     <NumberStates>1</NumberStates>
@@ -723,7 +709,7 @@
                       <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
                       <ButtonState>RightButton</ButtonState>
                     </Connection>
-                  </PushButton>
+                  </PushButton> -->
                 </Children>
               </WidgetGroup><!-- Speed/key controls -->
             </Children>
