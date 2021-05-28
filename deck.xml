@@ -730,7 +730,7 @@
           </WidgetGroup> -->
 
           <!-- effects <- -> mic/aux | sampler | jump | loop | cues -->
-          <WidgetGroup>
+          <!-- <WidgetGroup>
             <Size>0e,24f</Size>
             <Layout>horizontal</Layout>
             <Children>
@@ -741,7 +741,7 @@
               <ConfigKey>[Skin],show_intro_outro_cues</ConfigKey>
               <BindProperty>visible</BindProperty>
             </Connection>
-          </WidgetGroup>
+          </WidgetGroup> -->
 
           <WidgetGroup>
             <ObjectName>DeckLeftBorder</ObjectName>
