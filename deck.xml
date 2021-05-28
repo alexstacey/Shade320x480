@@ -124,7 +124,7 @@
                                 <Style>QLabel {
                                     font-size: 10px;
                                     font-weight: bold;
-                                    background-color: transparent;
+                                    background-color: #8D98A3;
                                     color: #191F24;
                                     padding-bottom: -2px;
                                   }
