@@ -1010,3 +1010,10 @@ WRateRange {
   font-size: 10px;
   qproperty-alignment: 'AlignCenter';
 }
+
+#MetersPanel,
+#LibraryMain,
+#LibrarySidebar {
+  background-color: #8D98A3;
+
+}
