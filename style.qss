@@ -1018,10 +1018,3 @@ WRateRange {
   background-color: #8D98A3;
 
 }
-#DeckRightPart {
-  border: 1px solid black;
-}
-
-WLibrarySidebar QMenu::item:nth-child(2) {
-  display: none;
-}

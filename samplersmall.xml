@@ -1,21 +1,21 @@
 <Template>
   <WidgetGroup>
-    <Size>i,43f</Size>
+    <Size>i,36f</Size>
     <Layout>horizontal</Layout>
     <Children>
-      <WidgetGroup>
+      <!-- <WidgetGroup>
         <ObjectName>EffectLeftBorder</ObjectName>
         <Size>5f,40f</Size>
         <BackPath>style/style_bg_deck_border.png</BackPath>
-      </WidgetGroup>
+      </WidgetGroup> -->
       <WidgetGroup>
-        <Size>0e,40f</Size>
+        <Size>0e,34f</Size>
         <BackPath>style/style_bg_looping.png</BackPath>
         <Layout>horizontal</Layout>
         <Children>
-          <WidgetGroup>
+          <!-- <WidgetGroup>
             <Size>4f,28f</Size>
-          </WidgetGroup>
+          </WidgetGroup> -->
           <PushButton>
             <TooltipId>cue_gotoandplay_cue_default</TooltipId>
             <NumberStates>2</NumberStates>
@@ -42,53 +42,80 @@
             </Connection>
           </PushButton>
 
+          <!-- waveform hacked in from sampler -->
+          <!-- <WidgetGroup>
+            <ObjectName>SamplerMid</ObjectName>
+            <Size>0e,30f</Size>
+            <BackPath>style/style_bg_sampler_mid.png</BackPath>
+            <Layout>horizontal</Layout>
+            <Children>
+              <Overview>
+                <TooltipId>waveform_overview</TooltipId>
+                <Group><Variable name="group"/></Group>
+                <Pos>0,0</Pos>
+                <Size>0e,35f</Size>
+                <BgColor>#8D98A3</BgColor>
+                <PlayedOverlayColor>#60000000</PlayedOverlayColor>
+                <SignalHighColor></SignalHighColor>
+                <SignalMidColor></SignalMidColor>
+                <SignalLowColor></SignalLowColor>
+                <SignalColor>#191F24</SignalColor>
+                <PlayPosColor>#00FF00</PlayPosColor>
+                <ShowCueTimes>false</ShowCueTimes>
+                <DefaultMark>
+                  <Align>bottom|right</Align>
+                  <Color>#FD0564</Color>
+                  <TextColor>#000000</TextColor>
+                  <Text> %1 </Text>
+                </DefaultMark>
+                <Mark>
+                  <Control>cue_point</Control>
+                  <Text>C</Text>
+                  <Align>top|right</Align>
+                  <Color>#FF001C</Color>
+                  <TextColor>#000000</TextColor>
+                </Mark>
+                <Connection>
+                  <ConfigKey><Variable name="group"/>,playposition</ConfigKey>
+                  <EmitOnDownPress>false</EmitOnDownPress>
+                </Connection>
+              </Overview>
+            </Children>
+          </WidgetGroup> -->
+
+
+          <!-- the name of the loaded sample (also the drop zone) -->
           <WidgetGroup>
-            <Size>0e,40f</Size>
+            <Size>0e,34f</Size>
             <SizePolicy>me,max</SizePolicy>
             <Layout>horizontal</Layout>
             <Children>
               <WidgetGroup>
-                <Size>0e,40f</Size>
-                <Pos>0,2</Pos>
+                <Size>0e,34f</Size>
+                <Pos>0,0</Pos>
                 <Layout>vertical</Layout>
                 <Children>
-                <Text>
-                  <Size>0e,40f</Size>
-                  <TooltipId>text</TooltipId>
-                  <Style>QLabel {
-                      font-size: 13px;
-                      font-weight: bold;
-                      background-color: transparent;
-                      color: #191F24;
-                      text-align: left;
-                      padding-left: 0px;
-                      padding-top: 2px;}
-                  </Style>
-                  <Group>[Sampler<Variable name="samplernum"/>]</Group>
-                  <Elide>right</Elide>
-                </Text>
-                <!-- Alternative "TITLE ONLY" display
-                <TrackProperty>
-                  <TooltipId>track_title</TooltipId>
-                  <Style>QLabel {
-                      font-size: 14px;
-                      line-height: 16px;
-                      font-weight: bold;
-                      background-color: transparent;
-                      color: #191F24;
-                      text-align: left;
-                      padding-left: 1px; }
-                  </Style>
-                  <Property>titleInfo</Property>
-                  <Group>[Sampler<Variable name="samplernum"/>]</Group>
-                  <SizePolicy>me,max</SizePolicy>
-                  <Elide>right</Elide>
-                </TrackProperty>
-                -->
+                  <Text>
+                    <Size>0e,34f</Size>
+                    <TooltipId>text</TooltipId>
+                    <Style>QLabel {
+                        font-size: 9px;
+                        font-weight: bold;
+                        background-color: transparent;
+                        color: #191F24;
+                        text-align: left;
+                        padding-left: 0px;
+                        padding-top: 0px;}
+                    </Style>
+                    <Group>[Sampler<Variable name="samplernum"/>]</Group>
+                    <Elide>right</Elide>
+                  </Text>
                 </Children>
               </WidgetGroup>
-              <WidgetGroup>
-                <Size>35f,40f</Size>
+
+              
+              <!-- <WidgetGroup>
+                <Size>35f,34f</Size>
                 <Layout>vertical</Layout>
                 <Children>
                   <Number>
@@ -101,17 +128,16 @@
                         padding-right: 0;
                         padding-top: 5px;}
                     </Style>
-                    <Size>35f,40f</Size>
+                    <Size>35f,34f</Size>
                     <Group>[Sampler<Variable name="samplernum"/>]</Group>
-                    <!--CSS alignments not respected see bug lp:605530 , lets call <Alignment>-->
                     <Alignment>right</Alignment>
                     <Connection>
                       <ConfigKey>[Sampler<Variable name="samplernum"/>],visual_bpm</ConfigKey>
                     </Connection>
                   </Number>
                 </Children>
-              </WidgetGroup>
-              <WidgetGroup>
+              </WidgetGroup> -->
+              <!-- <WidgetGroup>
                 <ObjectName>SamplerButtonGrid</ObjectName>
                 <Size>20f,30f</Size>
 
@@ -158,20 +184,20 @@
                     </Connection>
                   </PushButton>
                 </Children>
-              </WidgetGroup>
+              </WidgetGroup> -->
             </Children>
           </WidgetGroup>
-          </Children>
+        </Children>
       </WidgetGroup>
-      <WidgetGroup>
+      <!-- <WidgetGroup>
         <ObjectName>EffectRightBorder</ObjectName>
         <Size>5f,40f</Size>
         <BackPath>style/style_bg_deck_border.png</BackPath>
-      </WidgetGroup>
+      </WidgetGroup> -->
       <WidgetGroup>
         <ObjectName>EffectRightBorder</ObjectName>
-        <Size>3f,40f</Size>
-      </WidgetGroup>
+        <Size>1f,34f</Size>
+      </WidgetGroup> 
     </Children>
   </WidgetGroup>
 </Template>

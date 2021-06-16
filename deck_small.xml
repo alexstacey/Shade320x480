@@ -16,6 +16,7 @@
         <Layout>horizontal</Layout>
         <Children>
           <WidgetGroup>
+            <!-- TODO this needs to get smaller .... -->
             <Size>488min,38f</Size>
             <Layout>horizontal</Layout>
             <Children>

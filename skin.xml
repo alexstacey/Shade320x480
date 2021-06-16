@@ -64,9 +64,9 @@
       <!--Optionally, make elements visible on skin load-->
       <attribute persist="true" config_key="[Spinny1],show_spinny">0</attribute>
       <attribute persist="true" config_key="[Spinny2],show_spinny">0</attribute>
-      <attribute persist="true" config_key="[Samplers],show_samplers">0</attribute>
-      <attribute persist="true" config_key="[Skin],sampler_row_1_expanded">0</attribute>
-      <attribute persist="true" config_key="[Skin],sampler_row_2_expanded">0</attribute>
+      <attribute persist="true" config_key="[Samplers],show_samplers">1</attribute>
+      <attribute persist="true" config_key="[Skin],sampler_row_1_expanded">1</attribute>
+      <attribute persist="true" config_key="[Skin],sampler_row_2_expanded">1</attribute>
       <attribute persist="false" config_key="[EffectRack1],show">0</attribute>
       <attribute persist="false" config_key="[Microphone],show_microphone">0</attribute>
       <attribute persist="true" config_key="[PreviewDeck],show_previewdeck">0</attribute>
@@ -298,7 +298,7 @@
     <!--
     ############################################################################################
     ############################################################################################
-    WidgetGroup : Show/hide Samplers, Preview Deck, and shrink Library
+    Decks :: Visible when not in maximise library mode
     ############################################################################################
     ############################################################################################
     -->
@@ -309,9 +309,13 @@
         <WidgetGroup>
           <SizePolicy>me,min</SizePolicy>
           <Layout>vertical</Layout>
-          <!-- I don't now why this works but a WidgetGroup wrapper around a
-            WidgetStack with a 'fixed' size policy makes the group track the
-            minimum size of the current stack widget. -->
+
+          <Connection>
+            <ConfigKey>[Master],maximize_library</ConfigKey>
+            <BindProperty>visible</BindProperty>
+            <Transform><Not/></Transform>
+          </Connection>
+
           <Children>
 
             <WidgetGroup>
@@ -319,7 +323,7 @@
               <SizePolicy>me,min</SizePolicy>
               <Layout>horizontal</Layout>
               <Children>
-                <WidgetGroup><Size>3f,0min</Size></WidgetGroup>
+                <!-- <WidgetGroup><Size>3f,0min</Size></WidgetGroup> -->
 
                 <Template src="skin:deck.xml">
                   <SetVariable name="channum">1</SetVariable>
@@ -352,7 +356,7 @@
                   <SetVariable name="auxnum">2</SetVariable>
                 </Template>
 
-                <WidgetGroup><Size>3f,0min</Size></WidgetGroup>
+                <!-- <WidgetGroup><Size>3f,0min</Size></WidgetGroup> -->
               </Children>
             </WidgetGroup>
 
@@ -380,7 +384,7 @@
             </WidgetGroup>
             <Template src="skin:effectrow.xml"/>
             <Template src="skin:srcrow.xml"/>
-            <Template src="skin:samplerrow.xml">
+            <!-- <Template src="skin:samplerrow.xml">
               <SetVariable name="row">1</SetVariable>
               <SetVariable name="samplernum1">1</SetVariable>
               <SetVariable name="samplernum2">2</SetVariable>
@@ -393,14 +397,9 @@
               <SetVariable name="samplernum2">4</SetVariable>
               <SetVariable name="samplernum3">7</SetVariable>
               <SetVariable name="samplernum4">8</SetVariable>
-            </Template>
+            </Template> -->
 
           </Children>
-          <Connection>
-            <ConfigKey>[Master],maximize_library</ConfigKey>
-            <BindProperty>visible</BindProperty>
-            <Transform><Not/></Transform>
-          </Connection>
         </WidgetGroup>
 
         <!-- minimal decks, visible with maximized library -->
