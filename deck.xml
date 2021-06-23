@@ -6,8 +6,7 @@
     <Children>
       <WidgetGroup>
         <ObjectName>DeckLeftBorder</ObjectName>
-        <Size>5f,-1min</Size>
-        <BackPath>style/style_bg_deck_border.png</BackPath>
+        <Size>2f,-1min</Size>
       </WidgetGroup>
       <WidgetGroup>
         <ObjectName>DeckLeft</ObjectName>
@@ -31,8 +30,8 @@
                     <Children>
                       <WidgetGroup>
                         <ObjectName>DeckTopLeftPart</ObjectName>
-                        <Size>40f,45f</Size>
-                        <BackPath>style/style_bg_deck_top_left.png</BackPath>
+                        <Size>42f,45f</Size>
+                        <!-- <BackPath>style/style_bg_deck_top_left.png</BackPath> -->
                         <Children>
 
                           <!-- deck play button -->
@@ -115,10 +114,9 @@
 
                               <NumberBpm>
                                 <Style>QLabel {
-                                    font-size: 10px;
+                                    font-size: 12px;
                                     font-weight: bold;
-                                    background-color: #8D98A3;
-                                    color: #191F24;
+                                    color: #0F0;
                                     padding-bottom: -2px;
                                   }
                                 </Style>
@@ -126,7 +124,7 @@
                                 <Channel><Variable name="channum"/></Channel>
                                 <Alignment>center</Alignment>
                                 <Pos>0,20</Pos>
-                                <Size>35f,16f</Size>
+                                <Size>40f,16f</Size>
                                 <Connection>
                                   <ConfigKey><Variable name="group"/>,visual_bpm</ConfigKey>
                                 </Connection>
@@ -142,7 +140,6 @@
                         <ObjectName>DeckTopMidPart</ObjectName>
                         <Size>i,45f</Size>
                         <Layout>vertical</Layout>
-                        <BackPath>style/style_bg_deck_top_mid.png</BackPath>
                         <Children>
                           <WidgetGroup>
                             <ObjectName>ArtistAndTimeRow</ObjectName>
@@ -155,7 +152,7 @@
                                   font-size: 10px;
                                   line-height: 13px;
                                   font-weight: bold;
-                                  color: #191F24;
+                                  color: #CCC;
                                   text-align: left;
                                   padding-left: 1px;
                                   padding-top: 4px;
@@ -186,11 +183,11 @@
                           </WidgetGroup>
 
                           <!-- no idea what this is -->
-                          <TrackWidgetGroup>
+                          <!-- <TrackWidgetGroup>
                             <Size>0e,1f</Size>
                             <Group><Variable name="group"/></Group>
                             <TrackColorAlpha>255</TrackColorAlpha>
-                          </TrackWidgetGroup>
+                          </TrackWidgetGroup> -->
 
                           <!-- artist and time -->
                           <WidgetGroup>
@@ -205,7 +202,7 @@
                                   line-height: 13px;
                                   font-weight: bold;
                                   background-color: transparent;
-                                  color: #191F24;
+                                  color: #ccc;
                                   text-align: left;
                                   padding-left: 1px;
                                 }
@@ -246,7 +243,7 @@
                       <WidgetGroup>
                         <ObjectName>DeckUpperMidPart</ObjectName>
                         <Size>0e,61f</Size>
-                        <BackPath>style/style_bg_deck_pane.png</BackPath>
+                        <!-- <BackPath>style/style_bg_deck_pane.png</BackPath> -->
                         <Layout>horizontal</Layout>
                         <Children>
                           <!-- Collapsing Waveform, VinylControl & spinning Vinyl widget-->
@@ -255,15 +252,6 @@
                             <Size>0e,61f</Size>
                             <Layout>horizontal</Layout>
                             <Children>
-                              <!--If you want the waveforms center to adjust when resizing in a collapsing widget
-                              (e.g. to display spinning vinyl widget like in this skin) don't put the Waveform in a widget group,
-                              and don't specify the Waveform's <Size>. So you would have:
-                              Parent WidgetGroup
-                                Waveform Widget (no Widgetgroup)
-                                Child WidgetGroup for Spinny
-                                  Spinny Widget
-                              -->
-
                               <!--
                               **********************************************
                               Visual- Waveform
@@ -271,7 +259,7 @@
                               -->
                               <WidgetGroup>
                                 <Layout>horizontal</Layout>
-                                <Size>0e,61f</Size>
+                                <Size>0e,50f</Size>
                                 <Children>
                                   <Template src="skin:waveform.xml"/>
                                 </Children>
@@ -294,7 +282,7 @@
                         <ObjectName>DeckLowerMidPart</ObjectName>
                         <Size>0e,39f</Size>
                         <Layout>horizontal</Layout>
-                        <BackPath>style/style_bg_deck_woverview.png</BackPath>
+                        <!-- <BackPath>style/style_bg_deck_woverview.png</BackPath> -->
                         <Children>
                           <SingletonContainer>
                             <!-- <Size>100e,19f</Size> -->
@@ -495,17 +483,15 @@
           </WidgetGroup> -->
 
           <WidgetGroup>
-            <ObjectName>DeckLeftBorder</ObjectName>
-            <Size>0e,5f</Size>
-            <BackPath>style/style_bg_deck_border.png</BackPath>
+            <ObjectName>DeckBottomBorder</ObjectName>
+            <Size>0e,2f</Size>
           </WidgetGroup>
 
         </Children>
       </WidgetGroup>
       <WidgetGroup>
         <ObjectName>DeckRightBorder</ObjectName>
-        <Size>5f,-1min</Size>
-        <BackPath>style/style_bg_deck_border.png</BackPath>
+        <Size>2f,-1min</Size>
       </WidgetGroup>
     </Children>
   </WidgetGroup>

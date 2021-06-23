@@ -165,7 +165,7 @@
   General- Skin Colour Scheme
   **********************************************
   -->
-  <Schemes>
+  <!-- <Schemes>
     <Scheme>
       <Name>Classic</Name>
       <SetVariable name="color_scheme">classic</SetVariable>
@@ -205,7 +205,7 @@
       </Filters>
       <Style src="skin:style_summer_sunset.qss"/>
     </Scheme>
-  </Schemes>
+  </Schemes> -->
 
 
   <!--
@@ -291,6 +291,7 @@
     -->
 
     <WidgetGroup>
+      <ObjectName>SkinTopBorder</ObjectName>
       <Size>0e,2f</Size>
     </WidgetGroup>
 
@@ -362,7 +363,7 @@
 
             <WidgetGroup><Size>0min,2f</Size></WidgetGroup>
 
-            <WidgetGroup>
+            <!-- <WidgetGroup>
               <SizePolicy>me,min</SizePolicy>
               <Layout>horizontal</Layout>
               <Children>
@@ -381,23 +382,9 @@
                 <ConfigKey>[Skin],show_loop_beatjump_controls</ConfigKey>
                 <BindProperty>visible</BindProperty>
               </Connection>
-            </WidgetGroup>
-            <Template src="skin:effectrow.xml"/>
-            <Template src="skin:srcrow.xml"/>
-            <!-- <Template src="skin:samplerrow.xml">
-              <SetVariable name="row">1</SetVariable>
-              <SetVariable name="samplernum1">1</SetVariable>
-              <SetVariable name="samplernum2">2</SetVariable>
-              <SetVariable name="samplernum3">5</SetVariable>
-              <SetVariable name="samplernum4">6</SetVariable>
-            </Template>
-            <Template src="skin:samplerrow.xml">
-              <SetVariable name="row">2</SetVariable>
-              <SetVariable name="samplernum1">3</SetVariable>
-              <SetVariable name="samplernum2">4</SetVariable>
-              <SetVariable name="samplernum3">7</SetVariable>
-              <SetVariable name="samplernum4">8</SetVariable>
-            </Template> -->
+            </WidgetGroup> -->
+            <!-- <Template src="skin:effectrow.xml"/>
+            <Template src="skin:srcrow.xml"/> -->
 
           </Children>
         </WidgetGroup>

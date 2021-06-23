@@ -1,21 +1,14 @@
 <Template>
   <WidgetGroup>
-    <Size>i,36f</Size>
+    <Size>i,34f</Size>
     <Layout>horizontal</Layout>
     <Children>
-      <!-- <WidgetGroup>
-        <ObjectName>EffectLeftBorder</ObjectName>
-        <Size>5f,40f</Size>
-        <BackPath>style/style_bg_deck_border.png</BackPath>
-      </WidgetGroup> -->
       <WidgetGroup>
+        <ObjectName>Sampler</ObjectName>
         <Size>0e,34f</Size>
-        <BackPath>style/style_bg_looping.png</BackPath>
+        <!-- <BackPath>style/style_bg_looping.png</BackPath> -->
         <Layout>horizontal</Layout>
         <Children>
-          <!-- <WidgetGroup>
-            <Size>4f,28f</Size>
-          </WidgetGroup> -->
           <PushButton>
             <TooltipId>cue_gotoandplay_cue_default</TooltipId>
             <NumberStates>2</NumberStates>
@@ -41,49 +34,6 @@
               <ConfigKey>[Sampler<Variable name="samplernum"/>],play</ConfigKey>
             </Connection>
           </PushButton>
-
-          <!-- waveform hacked in from sampler -->
-          <!-- <WidgetGroup>
-            <ObjectName>SamplerMid</ObjectName>
-            <Size>0e,30f</Size>
-            <BackPath>style/style_bg_sampler_mid.png</BackPath>
-            <Layout>horizontal</Layout>
-            <Children>
-              <Overview>
-                <TooltipId>waveform_overview</TooltipId>
-                <Group><Variable name="group"/></Group>
-                <Pos>0,0</Pos>
-                <Size>0e,35f</Size>
-                <BgColor>#8D98A3</BgColor>
-                <PlayedOverlayColor>#60000000</PlayedOverlayColor>
-                <SignalHighColor></SignalHighColor>
-                <SignalMidColor></SignalMidColor>
-                <SignalLowColor></SignalLowColor>
-                <SignalColor>#191F24</SignalColor>
-                <PlayPosColor>#00FF00</PlayPosColor>
-                <ShowCueTimes>false</ShowCueTimes>
-                <DefaultMark>
-                  <Align>bottom|right</Align>
-                  <Color>#FD0564</Color>
-                  <TextColor>#000000</TextColor>
-                  <Text> %1 </Text>
-                </DefaultMark>
-                <Mark>
-                  <Control>cue_point</Control>
-                  <Text>C</Text>
-                  <Align>top|right</Align>
-                  <Color>#FF001C</Color>
-                  <TextColor>#000000</TextColor>
-                </Mark>
-                <Connection>
-                  <ConfigKey><Variable name="group"/>,playposition</ConfigKey>
-                  <EmitOnDownPress>false</EmitOnDownPress>
-                </Connection>
-              </Overview>
-            </Children>
-          </WidgetGroup> -->
-
-
           <!-- the name of the loaded sample (also the drop zone) -->
           <WidgetGroup>
             <Size>0e,34f</Size>
@@ -103,6 +53,7 @@
                         font-weight: bold;
                         background-color: transparent;
                         color: #191F24;
+                        color: #eee;
                         text-align: left;
                         padding-left: 0px;
                         padding-top: 0px;}
@@ -112,90 +63,12 @@
                   </Text>
                 </Children>
               </WidgetGroup>
-
-              
-              <!-- <WidgetGroup>
-                <Size>35f,34f</Size>
-                <Layout>vertical</Layout>
-                <Children>
-                  <Number>
-                    <TooltipId>visual_bpm</TooltipId>
-                    <Style>QLabel {
-                        font-size: 9px;
-                        font-weight: bold;
-                        background-color: transparent;
-                        color: #191F24;
-                        padding-right: 0;
-                        padding-top: 5px;}
-                    </Style>
-                    <Size>35f,34f</Size>
-                    <Group>[Sampler<Variable name="samplernum"/>]</Group>
-                    <Alignment>right</Alignment>
-                    <Connection>
-                      <ConfigKey>[Sampler<Variable name="samplernum"/>],visual_bpm</ConfigKey>
-                    </Connection>
-                  </Number>
-                </Children>
-              </WidgetGroup> -->
-              <!-- <WidgetGroup>
-                <ObjectName>SamplerButtonGrid</ObjectName>
-                <Size>20f,30f</Size>
-
-                <Children>
-                  <PushButton>
-                    <TooltipId>eject</TooltipId>
-                    <NumberStates>1</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Pressed>skin:/btn/btn_eject_sampler_over.png</Pressed>
-                      <Unpressed>skin:/btn/btn_eject_sampler.png</Unpressed>
-                    </State>
-                    <Pos>0,0</Pos>
-                    <Connection>
-                      <ConfigKey>[Sampler<Variable name="samplernum"/>],eject</ConfigKey>
-                      <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
-                      <ButtonState>LeftButton</ButtonState>
-                      <ConnectValueToWidget>false</ConnectValueToWidget>
-                    </Connection>
-                  </PushButton>
-                  <PushButton>
-                    <TooltipId>orientation</TooltipId>
-                    <NumberStates>3</NumberStates>
-                    <State>
-                      <Number>0</Number>
-                      <Pressed>skin:/btn/btn_orientation_sampler_left_over.png</Pressed>
-                      <Unpressed>skin:/btn/btn_orientation_sampler_left_over.png</Unpressed>
-                    </State>
-                    <State>
-                      <Number>1</Number>
-                      <Pressed>skin:/btn/btn_orientation_sampler_master.png</Pressed>
-                      <Unpressed>skin:/btn/btn_orientation_sampler_master.png</Unpressed>
-                    </State>
-                    <State>
-                      <Number>2</Number>
-                      <Pressed>skin:/btn/btn_orientation_sampler_right_over.png</Pressed>
-                      <Unpressed>skin:/btn/btn_orientation_sampler_right_over.png</Unpressed>
-                    </State>
-                    <Pos>0,13</Pos>
-                    <Connection>
-                      <ConfigKey>[Sampler<Variable name="samplernum"/>],orientation</ConfigKey>
-                      <EmitOnDownPress>true</EmitOnDownPress>
-                      <ButtonState>LeftButton</ButtonState>
-                    </Connection>
-                  </PushButton>
-                </Children>
-              </WidgetGroup> -->
             </Children>
           </WidgetGroup>
         </Children>
       </WidgetGroup>
-      <!-- <WidgetGroup>
-        <ObjectName>EffectRightBorder</ObjectName>
-        <Size>5f,40f</Size>
-        <BackPath>style/style_bg_deck_border.png</BackPath>
-      </WidgetGroup> -->
       <WidgetGroup>
-        <ObjectName>EffectRightBorder</ObjectName>
+        <ObjectName>SamplerRightBorder</ObjectName>
         <Size>1f,34f</Size>
       </WidgetGroup> 
     </Children>

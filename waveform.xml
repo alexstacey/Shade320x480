@@ -2,8 +2,9 @@
   <Visual>
     <TooltipId>waveform_display</TooltipId>
     <Channel><Variable name="channum"/></Channel>
-    <Size>0e,61f</Size>
-    <BgColor>#8D98A3</BgColor>
+    <Size>0e,50f</Size>
+    <!-- <BgColor>#8D98A3</BgColor> -->
+    <BgColor>#111</BgColor>
     <!--<BgPixmap>style/style_bg_waveform.png</BgPixmap>-->
     <SignalHighColor></SignalHighColor>
     <SignalMidColor></SignalMidColor>

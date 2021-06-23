@@ -5,126 +5,134 @@
 -->
 <Template>
     <WidgetGroup>
-        <ObjectName>MetersPanel</ObjectName>
-        <!-- <Layout>horizontal</Layout> -->
-        <Size>32f,me</Size>
-        <!-- <BackPath>style/style_bg_mixer_panel_main.png</BackPath> -->
+        <Layout>vertical</Layout>
+        <Size>me,me</Size>
         <Children>
+            <WidgetGroup>
+                <ObjectName>MetersPanel</ObjectName>
+                <!-- <Layout>horizontal</Layout> -->
+                <Size>32f,me</Size>
+                <!-- <BackPath>style/style_bg_mixer_panel_main.png</BackPath> -->
+                <Children>
 
-            <!-- Master Volume -->
-            <Knob>
-                <TooltipId>master_gain</TooltipId>
-                <NumberStates>64</NumberStates>
-                <Path>knobs/knob_rotary_s%1.png</Path>
-                <Pos>2,5</Pos>
-                <Connection>
-                  <ConfigKey>[Master],volume</ConfigKey>
-                </Connection>
-            </Knob>
+                    <!-- Master Volume -->
+                    <Knob>
+                        <TooltipId>master_gain</TooltipId>
+                        <NumberStates>64</NumberStates>
+                        <Path>knobs/knob_rotary_s%1.png</Path>
+                        <Pos>2,5</Pos>
+                        <Connection>
+                        <ConfigKey>[Master],volume</ConfigKey>
+                        </Connection>
+                    </Knob>
 
-            <!-- Channel 1 peak indicator -->
-            <StatusLight>
-                <TooltipId>channel_PeakIndicator</TooltipId>
-                <PathStatusLight>skin:/style/volume_clipping_over.png</PathStatusLight>
-                <PathBack>skin:/style/volume_clipping.png</PathBack>
-                <Pos>1,35</Pos>
-                <Connection>
-                    <ConfigKey>[Channel1],PeakIndicator</ConfigKey>
-                </Connection>
-            </StatusLight>
-            <!-- left Channel Meter -->
-            <VuMeter>
-                <TooltipId>channel_VuMeter</TooltipId>
-                <PathVu>skin:/style/volume_display_over.png</PathVu>
-                <PathBack>skin:/style/volume_display.png</PathBack>
-                <Pos>1,55</Pos>
-                <Horizontal>false</Horizontal>
-                <PeakHoldSize>5</PeakHoldSize>
-                <PeakHoldTime>500</PeakHoldTime>
-                <PeakFallTime>50</PeakFallTime>
-                <PeakFallStep>2</PeakFallStep>
-                <Connection>
-                    <ConfigKey>[Channel1],VuMeter</ConfigKey>
-                </Connection>
-            </VuMeter>
-
-
-            <!-- Master Left peak indicator -->
-            <StatusLight>
-                <TooltipId>master_PeakIndicatorL</TooltipId>
-                <PathStatusLight>skin:/style/volume_clipping_master_over.png</PathStatusLight>
-                <PathBack>skin:/style/volume_clipping_master.png</PathBack>
-                <Pos>10,35</Pos>
-                <Connection>
-                    <ConfigKey>[Master],PeakIndicatorL</ConfigKey>
-                </Connection>
-            </StatusLight>
-            <!-- master left Channel Meter -->
-            <VuMeter>
-                <TooltipId>master_VuMeterL</TooltipId>
-                <PathVu>skin:/style/volume_display_master_over.png</PathVu>
-                <PathBack>skin:/style/volume_display_master.png</PathBack>
-                <Pos>10,55</Pos>
-                <PeakHoldSize>5</PeakHoldSize>
-                <PeakHoldTime>500</PeakHoldTime>
-                <PeakFallTime>50</PeakFallTime>
-                <PeakFallStep>2</PeakFallStep>
-                <Connection>
-                    <ConfigKey>[Master],VuMeterL</ConfigKey>
-                </Connection>
-            </VuMeter>
-            <!-- Master Right peak indicator -->
-            <StatusLight>
-                <TooltipId>master_PeakIndicatorR</TooltipId>
-                <PathStatusLight>skin:/style/volume_clipping_master_over.png</PathStatusLight>
-                <PathBack>skin:/style/volume_clipping_master.png</PathBack>
-                <Pos>17,35</Pos>
-                <Connection>
-                    <ConfigKey>[Master],PeakIndicatorR</ConfigKey>
-                </Connection>
-            </StatusLight>
-            <!-- master right Channel Meter -->
-            <VuMeter>
-                <TooltipId>master_VuMeterR</TooltipId>
-                <PathVu>skin:/style/volume_display_master_over.png</PathVu>
-                <PathBack>skin:/style/volume_display_master.png</PathBack>
-                <Pos>17,55</Pos>
-                <PeakHoldSize>5</PeakHoldSize>
-                <PeakHoldTime>500</PeakHoldTime>
-                <PeakFallTime>50</PeakFallTime>
-                <PeakFallStep>2</PeakFallStep>
-                <Connection>
-                    <ConfigKey>[Master],VuMeterR</ConfigKey>
-                </Connection>
-            </VuMeter>
-
-            <!-- Channel 2 peak indicator -->
-            <StatusLight>
-                <TooltipId>channel_PeakIndicator</TooltipId>
-                <PathStatusLight>skin:/style/volume_clipping_over.png</PathStatusLight>
-                <PathBack>skin:/style/volume_clipping.png</PathBack>
-                <Pos>26,35</Pos>
-                <Connection>
-                    <ConfigKey>[Channel2],PeakIndicator</ConfigKey>
-                </Connection>
-            </StatusLight>
-            <!-- Channel 2 Meter -->
-            <VuMeter>
-                <TooltipId>channel_VuMeter</TooltipId>
-                <PathVu>skin:/style/volume_display_over.png</PathVu>
-                <PathBack>skin:/style/volume_display.png</PathBack>
-                <Pos>26,55</Pos>
-                <Horizontal>false</Horizontal>
-                <PeakHoldSize>5</PeakHoldSize>
-                <PeakHoldTime>500</PeakHoldTime>
-                <PeakFallTime>50</PeakFallTime>
-                <PeakFallStep>2</PeakFallStep>
-                <Connection>
-                    <ConfigKey>[Channel2],VuMeter</ConfigKey>
-                </Connection>
-            </VuMeter>
+                    <!-- Channel 1 peak indicator -->
+                    <StatusLight>
+                        <TooltipId>channel_PeakIndicator</TooltipId>
+                        <PathStatusLight>skin:/style/volume_clipping_over.png</PathStatusLight>
+                        <PathBack>skin:/style/volume_clipping.png</PathBack>
+                        <Pos>2,35</Pos>
+                        <Connection>
+                            <ConfigKey>[Channel1],PeakIndicator</ConfigKey>
+                        </Connection>
+                    </StatusLight>
+                    <!-- left Channel Meter -->
+                    <VuMeter>
+                        <TooltipId>channel_VuMeter</TooltipId>
+                        <PathVu>skin:/style/volume_display_over.png</PathVu>
+                        <PathBack>skin:/style/volume_display.png</PathBack>
+                        <Pos>2,55</Pos>
+                        <Horizontal>false</Horizontal>
+                        <PeakHoldSize>5</PeakHoldSize>
+                        <PeakHoldTime>500</PeakHoldTime>
+                        <PeakFallTime>50</PeakFallTime>
+                        <PeakFallStep>2</PeakFallStep>
+                        <Connection>
+                            <ConfigKey>[Channel1],VuMeter</ConfigKey>
+                        </Connection>
+                    </VuMeter>
 
 
+                    <!-- Master Left peak indicator -->
+                    <StatusLight>
+                        <TooltipId>master_PeakIndicatorL</TooltipId>
+                        <PathStatusLight>skin:/style/volume_clipping_master_over.png</PathStatusLight>
+                        <PathBack>skin:/style/volume_clipping_master.png</PathBack>
+                        <Pos>10,35</Pos>
+                        <Connection>
+                            <ConfigKey>[Master],PeakIndicatorL</ConfigKey>
+                        </Connection>
+                    </StatusLight>
+                    <!-- master left Channel Meter -->
+                    <VuMeter>
+                        <TooltipId>master_VuMeterL</TooltipId>
+                        <PathVu>skin:/style/volume_display_master_over.png</PathVu>
+                        <PathBack>skin:/style/volume_display_master.png</PathBack>
+                        <Pos>10,55</Pos>
+                        <PeakHoldSize>5</PeakHoldSize>
+                        <PeakHoldTime>500</PeakHoldTime>
+                        <PeakFallTime>50</PeakFallTime>
+                        <PeakFallStep>2</PeakFallStep>
+                        <Connection>
+                            <ConfigKey>[Master],VuMeterL</ConfigKey>
+                        </Connection>
+                    </VuMeter>
+                    <!-- Master Right peak indicator -->
+                    <StatusLight>
+                        <TooltipId>master_PeakIndicatorR</TooltipId>
+                        <PathStatusLight>skin:/style/volume_clipping_master_over.png</PathStatusLight>
+                        <PathBack>skin:/style/volume_clipping_master.png</PathBack>
+                        <Pos>17,35</Pos>
+                        <Connection>
+                            <ConfigKey>[Master],PeakIndicatorR</ConfigKey>
+                        </Connection>
+                    </StatusLight>
+                    <!-- master right Channel Meter -->
+                    <VuMeter>
+                        <TooltipId>master_VuMeterR</TooltipId>
+                        <PathVu>skin:/style/volume_display_master_over.png</PathVu>
+                        <PathBack>skin:/style/volume_display_master.png</PathBack>
+                        <Pos>17,55</Pos>
+                        <PeakHoldSize>5</PeakHoldSize>
+                        <PeakHoldTime>500</PeakHoldTime>
+                        <PeakFallTime>50</PeakFallTime>
+                        <PeakFallStep>2</PeakFallStep>
+                        <Connection>
+                            <ConfigKey>[Master],VuMeterR</ConfigKey>
+                        </Connection>
+                    </VuMeter>
+
+                    <!-- Channel 2 peak indicator -->
+                    <StatusLight>
+                        <TooltipId>channel_PeakIndicator</TooltipId>
+                        <PathStatusLight>skin:/style/volume_clipping_over.png</PathStatusLight>
+                        <PathBack>skin:/style/volume_clipping.png</PathBack>
+                        <Pos>25,35</Pos>
+                        <Connection>
+                            <ConfigKey>[Channel2],PeakIndicator</ConfigKey>
+                        </Connection>
+                    </StatusLight>
+                    <!-- Channel 2 Meter -->
+                    <VuMeter>
+                        <TooltipId>channel_VuMeter</TooltipId>
+                        <PathVu>skin:/style/volume_display_over.png</PathVu>
+                        <PathBack>skin:/style/volume_display.png</PathBack>
+                        <Pos>25,55</Pos>
+                        <Horizontal>false</Horizontal>
+                        <PeakHoldSize>5</PeakHoldSize>
+                        <PeakHoldTime>500</PeakHoldTime>
+                        <PeakFallTime>50</PeakFallTime>
+                        <PeakFallStep>2</PeakFallStep>
+                        <Connection>
+                            <ConfigKey>[Channel2],VuMeter</ConfigKey>
+                        </Connection>
+                    </VuMeter>
+                </Children>
+            </WidgetGroup>
+            <WidgetGroup>
+                <ObjectName>MetersBottomBorder</ObjectName>
+                <Size>0e,2f</Size>
+            </WidgetGroup>
         </Children>
     </WidgetGroup>
 </Template>
